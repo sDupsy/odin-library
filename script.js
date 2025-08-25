@@ -37,3 +37,16 @@ for (let book of myLibrary) {
   `;
   cards.appendChild(newBook);
 }
+
+
+// Overlay
+
+// Open the full screen search box
+function openAddBook() {
+  document.getElementById("myOverlay").style.display = "block";
+}
+
+// Close the full screen search box
+function closeAddBook() {
+  document.getElementById("myOverlay").style.display = "none";
+}

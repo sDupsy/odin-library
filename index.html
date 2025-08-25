@@ -9,6 +9,32 @@
 </head>
 <body>
     <div class="cards"></div>
+    <div id="myOverlay" class="overlay">
+        <span class="closebtn" onclick="closeAddBook()" title="Close Overlay">x</span>
+        <div class="overlay-content">
+            <form action="action_page.php">
+                <div class="form-row">
+                    <label for="author">Author:</label>
+                    <input type="text" placeholder="e.g. J.K. Rowling" name="author" id="author">
+                </div>
+                <div class="form-row">
+                    <label for="title">Title:</label>
+                    <input type="text" placeholder="e.g. Harry Potter and the Philosopher's Stone" name="title" id="title">
+                </div>
+                <div class="form-row">
+                    <label for="pages">Pages:</label>
+                    <input type="text" placeholder="e.g. 223" name="pages" id="pages">
+                </div>
+                <div class="form-row">
+                    <label for="read">Have you read it? Check if you have:</label>
+                    <input type="checkbox" name="read" id="read">
+                </div>
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+
+    </div>
+    <button class="openBtn" onclick="openAddBook()">New Book</button>
     <script src="script.js"></script>
 </body>
 </html>
