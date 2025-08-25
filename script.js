@@ -30,6 +30,7 @@ function displayBooks () {
       <p>Author: ${book.author}</p>
       <p>Pages: ${book.pages}</p>
       <p>${book.read ? "Already read" : "Not read yet"}</p>
+      <button class="delete-button">Delete Book</button>
     `;
     cards.appendChild(newBook);
   }
@@ -57,6 +58,7 @@ const pages = favDialog.querySelector("#pages");
 const read = favDialog.querySelector("#read");
 const confirmBtn = favDialog.querySelector("#confirmBtn");
 const cancelBtn = favDialog.querySelector("#cancelBtn");
+const deleteBtn = document.querySelector(".delete-button")
 
 
 showButton.addEventListener("click", () => {
@@ -76,5 +78,9 @@ favDialog.addEventListener("submit", (event) => {
     favDialog.close();
     favDialog.querySelector("form").reset();
   }
+  
+});
+
+deleteBtn.addEventListener("click", () => {
   
 });
