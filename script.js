@@ -24,7 +24,6 @@ addBookToLibrary("12 Rules for life", "Jordan Peterson", 448, true);
 addBookToLibrary("Factfulness", "Hans, Anna and Ola Rosling", 352, true);
 addBookToLibrary("IT", "Stephen King", 1168, false);
 
-console.log(myLibrary);
 
 for (let book of myLibrary) {
   const newBook = document.createElement("div");
@@ -39,14 +38,37 @@ for (let book of myLibrary) {
 }
 
 
-// Overlay
+const showButton = document.querySelector(".showDialog");
+const favDialog = document.querySelector(".favDialog");
+const author = favDialog.querySelector("#author");
+const title = favDialog.querySelector("#title");
+const pages = favDialog.querySelector("#pages");
+const read = favDialog.querySelector("#read");
+const confirmBtn = favDialog.querySelector("#confirmBtn");
+const cancelBtn = favDialog.querySelector("#cancelBtn");
 
-// Open the full screen search box
-function openAddBook() {
-  document.getElementById("myOverlay").style.display = "block";
-}
 
-// Close the full screen search box
-function closeAddBook() {
-  document.getElementById("myOverlay").style.display = "none";
-}
+showButton.addEventListener("click", () => {
+  favDialog.showModal();
+});
+
+cancelBtn.addEventListener("click", () => {
+  favDialog.close();
+});
+
+
+favDialog.addEventListener("submit", (event) => {
+  event.preventDefault();
+  addBookToLibrary(author.value, title.value, pages.value, read.checked);
+  const newBook = document.createElement("div");
+  newBook.classList.add("card");
+  newBook.innerHTML = `
+    <p>Title: ${title.value}</p>
+    <p>Author: ${author.value}</p>
+    <p>Pages: ${pages.value}</p>
+    <p>${read.checked ? "Already read" : "Not read yet"}</p>
+  `;
+  cards.appendChild(newBook);
+  favDialog.close();
+  favDialog.querySelector("form").reset();
+});
