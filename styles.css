@@ -1,0 +1,14 @@
+.card {
+    display: flex;
+    flex-direction: column;
+    border: 2px solid black;
+    border-radius: 10px;
+    width: 250px;
+    margin: 8px;
+    place-items: center;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+}
