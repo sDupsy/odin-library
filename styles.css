@@ -1,16 +1,118 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+}
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    interpolate-size: allow-keywords;
+  }
+}
+body {
+  /* 4. Add accessible line-height */
+  line-height: 1.5;
+  /* 5. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+}
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+input, button, textarea, select {
+  font: inherit;
+}
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+p {
+  text-wrap: pretty;
+}
+h1, h2, h3, h4, h5, h6 {
+  text-wrap: balance;
+}
+#root, #__next {
+  isolation: isolate;
+}
+
+html, body {
+  height: 100%;
+}
+
+:root {
+    --background: #F3F4F6;
+    --card: #FFFFFF;
+    --text-primary: #111827;
+    --text-secondary: #6B7280;
+    --borders-lines: #E5E7EB;
+    --primary-accent: #3B82F6;
+    --secondary-accent: #10B981;
+    --warning: #F59E0B;
+    --error: #EF4444;
+    --succes: #22C55E;
+}
+
+body {
+    display: grid;
+    grid-template-rows: auto 1fr;
+    background-color: var(--background);
+}
+
 .card {
     display: flex;
     flex-direction: column;
-    border: 2px solid black;
+    border: none;
     border-radius: 10px;
-    width: 250px;
-    margin: 8px;
+    width: 300px;
+    margin: 16px;
+    padding: 16px;
     place-items: center;
+    background-color: var(--card);
+    height: 15em;
+    justify-content: space-around;
+    align-items: center;
+
 }
 
 .cards {
     display: flex;
     flex-wrap: wrap;
+    background-color: var(--background)
 }
 
+.header {
+    min-height: 6em;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 40px;
+    background-color: var(--card);
+    box-shadow: 0 12px 24px -8px rgba(0,0,0,0.35);
+}
 
+.favDialog {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 2rem;
+  border: none;
+  border-radius: 10px;
+  background: white;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.9);
+}
+
+.favDialog::backdrop {
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.btn-wrapper button {
+    background-color: var(--background);
+    border: none;
+    border-radius: 50%;
+} 
+
+.btn-wrapper svg {
+    width: 3em;
+    height: 3em;
+}
