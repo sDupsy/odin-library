@@ -11,31 +11,34 @@
     <div class="header">
         <h1>My Library</h1>
         <div class="btn-wrapper">
-            <button class="showDialog"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>plus</title><path d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z" /></svg></button>
+            <button class="showDialog"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><title>Add Book</title><path d="M19,13H13V19H11V13H5V11H11V5H13V11H19V13Z" /></svg></button>
         </div>
     </div>
     <div class="cards"></div>
     <dialog class="favDialog">
         <form action="">
-            <div class="form-row">
-                <label for="title">Title:</label>
-                <input required type="text" placeholder="e.g. Harry Potter and the Philosopher's Stone" name="title" id="title">
-            </div>
-            <div class="form-row">
-                <label for="author">Author:</label>
-                <input required type="text" placeholder="e.g. J.K. Rowling" name="author" id="author">
-            </div>
-            <div class="form-row">
-                <label for="pages">Pages:</label>
-                <input required type="number" min="1" placeholder="e.g. 223" name="pages" id="pages">
-            </div>
-            <div class="form-row">
-                <label for="read">Have you read it? Check if you have:</label>
-                <input type="checkbox" name="read" id="read">
-            </div>
-            <div>
-                <button type="button" id="cancelBtn">Cancel</button>
-                <button type="submit" id="confirmBtn">Confirm</button>
+            <div class="form-wrapper">
+                <h1 class="heading">New Book</h1>
+                <div class="form-row title">
+                    <label for="title">Title:</label>
+                    <input required type="text" placeholder="e.g. The Alchemist" name="title" id="title">
+                </div>
+                <div class="form-row author">
+                    <label for="author">Author:</label>
+                    <input required type="text" placeholder="e.g. Paulo Coelho" name="author" id="author">
+                </div>
+                <div class="form-row pages">
+                    <label for="pages">Pages:</label>
+                    <input required type="number" min="1" placeholder="e.g. 224" name="pages" id="pages">
+                </div>
+                <div class="form-row read">
+                    <label for="read">Have you read it?</label>
+                    <input class="checkmark" type="checkbox" name="read" id="read">
+                </div>
+                <div class="dialog-btns">
+                    <button class="cancel-button" type="button" id="cancelBtn">Cancel</button>
+                    <button class="confirm-button" type="submit" id="confirmBtn">Confirm</button>
+                </div>
             </div>
         </form>
     </dialog>

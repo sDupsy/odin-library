@@ -100,6 +100,7 @@ body {
   border-radius: 10px;
   background: white;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.9);
+  
 }
 
 .favDialog::backdrop {
@@ -107,12 +108,73 @@ body {
 }
 
 .btn-wrapper button {
-    background-color: var(--background);
+    background-color: var(--primary-accent);
     border: none;
+    height: 50px;
+    width: 50px;
     border-radius: 50%;
 } 
 
 .btn-wrapper svg {
     width: 3em;
     height: 3em;
+}
+
+button:hover {
+    cursor: pointer;
+    transform: scale(1.05);
+} 
+
+.form-wrapper {
+  display: grid;
+  grid-template-rows: repeat(6, 1fr);
+  grid-template-columns: 1fr;
+  
+  align-items: center;
+  text-align: center;
+  
+}
+
+
+.form-row {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 8px;
+  
+}
+
+input {
+  border-radius: 2px;
+  border: none;
+  border-bottom: 1px solid var(--primary-accent);
+}
+
+input:focus {
+  outline: none;
+}
+
+.read {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.checkmark
+ {
+    position: relative;
+    left: 12%;
+    transform: translate(-90%, 0%);
+    height: 20px;
+    width: 20px;
+  
+}
+
+.dialog-btns {
+  display: flex;
+  gap: 12px;
+}
+
+.cancel-button {
+  margin-left: 8px;;
 }
