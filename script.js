@@ -26,15 +26,19 @@ function displayBooks () {
     const newBook = document.createElement("div");
     newBook.classList.add("card");
     newBook.innerHTML = `
-      <p>Title: ${book.title}</p>
-      <p>Author: ${book.author}</p>
-      <p>Pages: ${book.pages}</p>
-      <p>${book.read ? "Already read" : "Not read yet"}</p>
-      <button class="delete-button">Delete Book</button>
-    `;
+    <p>Title: ${book.title}</p>
+    <p>Author: ${book.author}</p>
+    <p>Pages: ${book.pages}</p>
+    <button class="read-button" data-id="${book.id}">
+      ${book.read ? "Read" : "Unread"}
+    </button>
+    <button class="delete-button" data-id="${book.id}">Delete Book</button>
+  `;
+
     cards.appendChild(newBook);
   }
 }
+
 
 
 function isInLibrary(newBook) {
@@ -81,6 +85,22 @@ favDialog.addEventListener("submit", (event) => {
   
 });
 
-deleteBtn.addEventListener("click", () => {
-  
+cards.addEventListener("click", (e) => {
+  if (e.target.classList.contains("delete-button")) {
+    const bookId = e.target.getAttribute("data-id");
+    const index = myLibrary.findIndex(book => book.id === bookId);
+    if (index !== -1) {
+      myLibrary.splice(index, 1);
+      displayBooks();
+    }
+  }
+
+  if (e.target.classList.contains("read-button")) {
+    const bookId = e.target.getAttribute("data-id");
+    const book = myLibrary.find(book => book.id === bookId);
+    if (book) {
+      book.read = !book.read; 
+      displayBooks();   
+    }
+  }
 });
