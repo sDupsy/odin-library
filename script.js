@@ -26,10 +26,12 @@ function displayBooks () {
     const newBook = document.createElement("div");
     newBook.classList.add("card");
     newBook.innerHTML = `
-    <p>Title: ${book.title}</p>
-    <p>Author: ${book.author}</p>
-    <p>Pages: ${book.pages}</p>
-    <button class="read-button" data-id="${book.id}">
+    <p><span>Title:</span> ${book.title}</p>
+    <p><span>Author:</span> ${book.author}</p>
+    <p><span>Pages:</span> ${book.pages}</p>
+    <button 
+      class="read-button ${book.read ? "read" : "unread"}" 
+      data-id="${book.id}">
       ${book.read ? "Read" : "Unread"}
     </button>
     <button class="delete-button" data-id="${book.id}">Delete Book</button>
@@ -50,6 +52,7 @@ function isInLibrary(newBook) {
 addBookToLibrary("12 Rules for life", "Jordan Peterson", 448, true);
 addBookToLibrary("Factfulness", "Hans, Anna and Ola Rosling", 352, true);
 addBookToLibrary("IT", "Stephen King", 1168, false);
+
 
 displayBooks();
 
