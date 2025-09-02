@@ -1,17 +1,18 @@
 const myLibrary = [];
 const cards = document.querySelector(".cards");
 
-function Book(title, author, pages, read, id) {
+
+
+class Book {
+  constructor(title, author, pages, read, id) {
   this.title = title;
   this.author = author;
   this.pages = pages;
   this.read = read;
   this.id = id;
+  }
+  
 }
-
-Book.prototype.info = function() {
-  return `${this.title} by ${this.author}, ${this.pages} pages, ${this.read}`;
-};
 
 function addBookToLibrary(title, author, pages, read) {
   const id = crypto.randomUUID();
